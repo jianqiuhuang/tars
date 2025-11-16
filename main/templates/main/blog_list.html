@@ -31,7 +31,7 @@
                         {% if post.published_date %}
                             <p class="blog-date">{{ post.published_date|date:"F d, Y" }}</p>
                         {% endif %}
-                        <p class="blog-excerpt">{{ post.content|truncatewords:30|striptags }}</p>
+                        <p class="blog-excerpt">{{ post.get_excerpt }}</p>
                         <a href="{% url 'main:blog_detail' post.slug %}" class="read-more">Read more →</a>
                     </div>
                 </article>

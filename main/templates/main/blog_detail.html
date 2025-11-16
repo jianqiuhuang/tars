@@ -18,7 +18,7 @@
         {% endif %}
 
         <div class="blog-post-content">
-            {{ post.content|safe }}
+            {{ post.get_html_content|safe }}
         </div>
 
         <div class="blog-post-footer">
