@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ post.title }} - My Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <article class="blog-post">
+        <div class="blog-post-header">
+            <span class="blog-category">{{ post.get_category_display }}</span>
+            <h1>{{ post.title }}</h1>
+            {% if post.published_date %}
+                <p class="blog-date">{{ post.published_date|date:"F d, Y" }}</p>
+            {% endif %}
+        </div>
+
+        {% if post.featured_image %}
+            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="blog-featured-image">
+        {% endif %}
+
+        <div class="blog-post-content">
+            {{ post.content|safe }}
+        </div>
+
+        <div class="blog-post-footer">
+            <a href="{% url 'main:blog_list' %}" class="back-link">← Back to Blog</a>
+        </div>
+    </article>
+</div>
+{% endblock %}
+

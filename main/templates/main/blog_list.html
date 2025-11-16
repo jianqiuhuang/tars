@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Blog - My Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Blog</h1>
+    </div>
+
+    <div class="category-filter">
+        <a href="{% url 'main:blog_list' %}" class="filter-btn {% if not selected_category %}active{% endif %}">All</a>
+        {% for value, label in categories %}
+            <a href="{% url 'main:blog_list' %}?category={{ value }}" 
+               class="filter-btn {% if selected_category == value %}active{% endif %}">
+                {{ label }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="blog-list">
+        {% if posts %}
+            {% for post in posts %}
+                <article class="blog-card">
+                    {% if post.featured_image %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="blog-image">
+                    {% endif %}
+                    <div class="blog-card-content">
+                        <span class="blog-category">{{ post.get_category_display }}</span>
+                        <h2><a href="{% url 'main:blog_detail' post.slug %}">{{ post.title }}</a></h2>
+                        {% if post.published_date %}
+                            <p class="blog-date">{{ post.published_date|date:"F d, Y" }}</p>
+                        {% endif %}
+                        <p class="blog-excerpt">{{ post.content|truncatewords:30|striptags }}</p>
+                        <a href="{% url 'main:blog_detail' post.slug %}" class="read-more">Read more →</a>
+                    </div>
+                </article>
+            {% endfor %}
+        {% else %}
+            <p class="no-posts">No blog posts available yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

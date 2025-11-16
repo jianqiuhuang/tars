@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block title %}About - My Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>About Me</h1>
+    </div>
+
+    <div class="content-section">
+        <p class="about-text">
+            Add your personal description here. This is where you can write about who you are, 
+            what you do, your interests, and your background. Keep it concise and engaging.
+        </p>
+
+        <div class="social-links">
+            <a href="{{ linkedin_url }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                LinkedIn
+            </a>
+            <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                GitHub
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
