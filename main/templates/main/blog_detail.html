@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 
-{% block title %}{{ post.title }} - My Website{% endblock %}
+{% block title %}{{ post.title }} - Leo Huang{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="blog-post-footer">
-            <a href="{% url 'main:blog_list' %}" class="back-link">← Back to Blog</a>
+            <a href="{% url 'main:home' %}" class="back-link">← Back to Blog</a>
         </div>
     </article>
 </div>

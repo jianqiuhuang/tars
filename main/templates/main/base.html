@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
+    <title>{% block title %}Leo Huang{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="{% url 'main:home' %}" class="nav-logo">Home</a>
+            <a href="{% url 'main:home' %}" class="nav-logo">Leo Huang</a>
             <ul class="nav-menu">
-                <li><a href="{% url 'main:home' %}">Home</a></li>
+                <li><a href="{% url 'main:home' %}">Blog</a></li>
                 <li><a href="{% url 'main:about' %}">About</a></li>
-                <li><a href="{% url 'main:blog_list' %}">Blog</a></li>
             </ul>
         </div>
     </nav>
@@ -25,7 +24,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; {% now "Y" %} My Website. All rights reserved.</p>
+        <p>&copy; {% now "Y" %} Leo Huang. All rights reserved.</p>
     </footer>
 </body>
 </html>

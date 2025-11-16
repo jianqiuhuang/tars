@@ -1,17 +1,13 @@
-"""Main views: home and about pages"""
+"""Main views: about page"""
 from django.shortcuts import render
-
-
-def home_view(request):
-    """Home page with navigation links"""
-    return render(request, 'main/home.html')
 
 
 def about_view(request):
     """About page with personal description and social links"""
     context = {
-        'linkedin_url': 'https://www.linkedin.com/in/yourprofile',  # Update with your LinkedIn
-        'github_url': 'https://github.com/yourusername',  # Update with your GitHub
+        'linkedin_url': 'https://www.linkedin.com/in/leo-huang-34402a82 ',  # Update with your LinkedIn
+        'github_url': 'https://github.com/jianqiuhuang',  # Update with your GitHub
+        'profile_image': 'main/images/about_me.jpg',  # Profile image at main/static/main/images/about_me.jpg
     }
     return render(request, 'main/about.html', context)
 

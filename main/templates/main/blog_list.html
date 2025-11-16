@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Blog - My Website{% endblock %}
+{% block title %}Blog - Leo Huang{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -9,9 +9,9 @@
     </div>
 
     <div class="category-filter">
-        <a href="{% url 'main:blog_list' %}" class="filter-btn {% if not selected_category %}active{% endif %}">All</a>
+        <a href="{% url 'main:home' %}" class="filter-btn {% if not selected_category %}active{% endif %}">All</a>
         {% for value, label in categories %}
-            <a href="{% url 'main:blog_list' %}?category={{ value }}" 
+            <a href="{% url 'main:home' %}?category={{ value }}" 
                class="filter-btn {% if selected_category == value %}active{% endif %}">
                 {{ label }}
             </a>

@@ -127,21 +127,118 @@ body {
 /* Page Headers */
 .page-header {
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .page-header h1 {
     font-size: 2.5rem;
     font-weight: 300;
     color: #222;
+    margin: 0;
 }
 
 /* About Page */
+.about-header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-header {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+.social-links-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-link-icon {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.social-link-icon:hover {
+    color: #666;
+    transform: scale(1.1);
+}
+
+.social-link-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 769px) {
+    .about-layout {
+        min-height: 500px;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .about-image-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.about-image-wrapper {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .profile-image {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.about-content {
+    flex: 1;
+}
+
 .about-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #444;
-    margin-bottom: 2rem;
-    max-width: 700px;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
 .social-links {
@@ -404,6 +501,21 @@ body {
 
     .blog-post-header h1 {
         font-size: 2rem;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about-content h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: left;
     }
 }
 
